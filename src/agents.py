@@ -3,13 +3,13 @@ from crewai import Agent
 from crewai import LLM 
 from tools import file_read_tool, serper_dev_tool
 
-# -------------------------------------------------------------The Model 
+############################################### Models
 llm = LLM(
     model="ollama/llama3.2:1b",
     base_url="http://localhost:11434"
 )
 
-# -------------------------------------------------------------The Agents
+############################################### Agents
 senior_technical_writer = Agent(
 
     role="Senior Technical Writer",    
