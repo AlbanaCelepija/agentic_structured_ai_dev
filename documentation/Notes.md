@@ -44,6 +44,27 @@ Execute code to perform calculations or data transformations.
 Analyze images, PDFs, and documents beyond just text inputs.
 In short, tools empower AI agents to interact with the world, making them more dynamic, intelligent, and actionable.
 
+---------------------------------------------------------------------------------- Multi-agent system
+
+While a single agent works well for simple use cases, it’s not scalable or robust for complex workflows, because:
+
+A single agent trying to do everything results in diluted focus and lower accuracy.
+A single agent cannot delegate tasks or refine outputs based on expert knowledge.
+A single agent executing multiple steps sequentially can be slow and inefficient.
+
+---------------------------------------------------------------------------------- Configurations
+
+we’ve defined agents, tasks, and workflows directly in Python, which works well for prototyping and quick iteration. However, there’s a downside to this approach:
+
+You are constantly interacting with the code, modifying agents, tweaking tasks, and updating configurations.
+This increases the risk of introducing errors into the pipeline, especially when transitioning from development to production.
+Maintaining large-scale workflows becomes harder as complexity increases.
+To solve this, we can decouple agent definitions, tasks, and workflows from the Python script by using YAML configuration files. This approach allows us to:
+
+Separate logic from configuration, making workflows more maintainable.
+Easily modify agents and tasks without changing the core execution logic.
+Version control YAML files for better traceability of workflow changes.
+
 
 --------------------------------------------------------------------------------- TODO: DSPy
 

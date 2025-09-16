@@ -1,7 +1,7 @@
 
 from crewai import Agent
 from crewai import LLM 
-from tools import file_read_tool
+from tools import file_read_tool, serper_dev_tool
 
 # -------------------------------------------------------------The Model 
 llm = LLM(
@@ -46,3 +46,35 @@ summarizer_agent = Agent(
     tools=[file_read_tool],
     verbose=True
 )
+
+
+research_agent = Agent(
+    role="Internet Researcher",
+    goal="Find the most relevant and recent information about a given topic.",
+    backstory="""You are a skilled researcher, adept at navigating the internet 
+                 and gathering high-quality, reliable information.""",
+    llm=llm,
+    tools=[serper_dev_tool],
+    verbose=True
+)
+
+
+summarizer_research_agent = Agent(
+    role="Content Summarizer",
+    goal="Condense the key insights from research into a short and informative summary.",
+    backstory="""You are an expert in distilling complex information into concise, 
+                 easy-to-read summaries.""",
+    llm=llm,
+    verbose=True
+)
+
+fact_checker_agent = Agent(
+    role="Fact-Checking Specialist",
+    goal="Verify the accuracy of information and remove any misleading or false claims.",
+    backstory="""You are an investigative journalist with a knack for validating facts, 
+                 ensuring that only accurate information is published.""",
+    llm=llm,
+    tools=[serper_dev_tool],
+    verbose=True
+)
+
