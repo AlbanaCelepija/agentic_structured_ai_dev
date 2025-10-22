@@ -1,6 +1,13 @@
 
+# LMs
+langchain_openai
+
 # Agents framework
 crewai
 crewai-tools
+
+# Observability
+opik
+
 
 

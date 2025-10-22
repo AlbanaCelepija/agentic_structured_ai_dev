@@ -12,3 +12,14 @@ curl http://localhost:11434/api/generate -d '{
   "prompt": "Why is the sky blue?",
   "stream": false
 }'
+
+
+# LLM observability - Opik setup instructions
+# Clone the Opik repository
+git clone https://github.com/comet-ml/opik.git
+# Navigate to the opik folder
+cd opik
+# Start the Opik platform
+./opik.sh
+
+
