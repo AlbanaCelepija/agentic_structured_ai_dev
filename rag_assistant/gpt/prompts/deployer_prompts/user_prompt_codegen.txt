@@ -1,0 +1,39 @@
+Question: {question} 
+
+def bias_mitigation_pre_reweighing(data: Data, config: Configuration) -> Data:
+    """Reweighing is a pre-processing bias mitigation technique that amends the dataset to achieve statistical parity. 
+    This method adjusts the weights of the samples in the dataset to compensate for imbalances between 
+    different groups. By applying appropriate weights to each instance, 
+    it ensures that the model is not biased towards any particular group, thereby promoting fairness. 
+    The goal is to adjust the influence of each group so that the final model satisfies fairness criteria 
+    such as statistical parity or disparate impact."""
+    # Initialise and fit the Reweighing model to mitigate bias
+    rew = Reweighing()
+
+    data = data.get_dataset()
+    # Split the data into training and testing sets (70% training, 30% testing)
+    data_train, data_test = train_test_split(data, test_size=config.test_size, random_state=config.random_state)
+    # Get the feature matrix (X), target labels (y), and demographic data for both sets
+    X_train, y_train, dem_train = split_data_from_df(data_train)
+    X_test, y_test, dem_test = split_data_from_df(data_test)
+    
+    # Define the groups (Black and White) in the training data based on the 'Ethnicity' column
+    group_a_train = (dem_train['Ethnicity'] == 'Black')  # Group A: Black ethnicity
+    group_b_train = (dem_train['Ethnicity'] == 'White')  # Group B: White ethnicity
+
+    # Fit the reweighing technique to adjust sample weights
+    rew.fit(y_train, group_a_train, group_b_train)
+
+    # Extract the calculated sample weights from the reweighing model
+    sample_weights = rew.estimator_params["sample_weight"]
+    data_train['sample_weights'] = sample_weights
+    
+    data_train.to_parquet(config.resulting_filepath)
+    return Data(config.resulting_filepath, data_train)
+
+
+Context: {context} 
+
+Output Format: Ensure your output strictly contains only the python code for transforming python functions into the syntax that digitalhub platform accepts.
+Important Notes: Do not report your reasoning steps or any preamble like 'Here is the output', ONLY the python code.
+*** Double Check your output that it contains only the requested python code and nothing else. ***
