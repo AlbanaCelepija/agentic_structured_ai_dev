@@ -1,0 +1,2 @@
+aisuite[ollama]  # install ausuite with all model providers libraries
+qrcode

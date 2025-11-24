@@ -26,5 +26,13 @@ def ask_model(opik_tracer):
     )
 
 
+def ask_for_confirmation():
+    """ Human in the loop (HITL)"""
+    pass
+
+
+
+
+
 if __name__ == "__main__":
     ask_model(opik_tracer)
