@@ -67,3 +67,7 @@ def get_hybrid_search_retriever(
     )
 
     return retriever
+
+
+def retrieve(self):
+    pass

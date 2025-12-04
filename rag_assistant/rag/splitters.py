@@ -22,7 +22,7 @@ def get_splitter(chunk_size: int) -> Splitter:
     )
 
     return RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-        encoding_name="cl100k_base",
+        #encoding_name="cl100k_base",
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
     )

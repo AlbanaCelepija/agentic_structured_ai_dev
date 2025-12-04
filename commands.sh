@@ -2,6 +2,7 @@
 # install ollama
 curl -fsSL https://ollama.com/install.sh | sh
 #ollama run llama3.2
+ollama serve
 ollama pull llama3.2:1b # run llama3.2 in 1b mode since it's small'
 ollama run llama3.2:1b
 ####
@@ -9,7 +10,10 @@ ollama pull mistral:7b
 ollama run mistral:7b
 #### load fine tuned model
 ollama create finetunedmodel -f modelfile
-
+####### list 
+ollama list
+####### create model
+ollama create unsloth_ft_model -f model/Modelfile
 
 
 # generate response

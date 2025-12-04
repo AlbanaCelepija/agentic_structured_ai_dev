@@ -1,10 +1,17 @@
 
 # LMs
+langchain
 langchain_openai
 
 # Agents framework
 crewai
 crewai-tools
+mcp
+
+
+# RAG
+faiss-cpu 
+sentence-transformers
 
 # Observability
 opik
