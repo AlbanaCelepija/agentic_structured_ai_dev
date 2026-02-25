@@ -1,0 +1,7 @@
+Question: {question} 
+
+Context: {context} 
+
+Output Format: Ensure your output strictly contains only the python code for transforming python functions into the syntax that digitalhub platform accepts.
+Important Notes: Do not report your reasoning steps or any preamble like 'Here is the output', ONLY the python code.
+*** Double Check your output that it contains only the requested python code and nothing else. ***

@@ -1,18 +1,19 @@
 import os
-from dotenv import load_dotenv, find_dotenv 
+from dotenv import load_dotenv, find_dotenv
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI
-from opik import configure 
-from opik.integrations.langchain import OpikTracer 
+from opik import configure
+from opik.integrations.langchain import OpikTracer
 
 _ = load_dotenv(find_dotenv())
 
-opik_tracer = OpikTracer() 
+opik_tracer = OpikTracer()
 
-def ask_model(opik_tracer):    
+
+def ask_model(opik_tracer):
     llm = OpenAI(
         temperature=0,
-        callbacks=[opik_tracer], 
+        callbacks=[opik_tracer],
     )
     prompt_template = PromptTemplate(
         input_variables=["input"], template="Write a pipeline for {input}"
@@ -21,17 +22,14 @@ def ask_model(opik_tracer):
     print(
         llm_chain.invoke(
             {"input": "AI solution development"},
-            callbacks=[opik_tracer], 
+            callbacks=[opik_tracer],
         )
     )
 
 
 def ask_for_confirmation():
-    """ Human in the loop (HITL)"""
+    """Human in the loop (HITL)"""
     pass
-
-
-
 
 
 if __name__ == "__main__":
