@@ -1,0 +1,14 @@
+[
+    {
+        "id": "evidently",
+        "urls": [
+            "https://docs.evidentlyai.com/docs/library/overview"
+        ]
+    },
+    {
+        "id": "holisticai",
+        "urls": [
+            "https://holisticai.readthedocs.io/en/latest/reference/index.html"
+        ]
+    }
+]

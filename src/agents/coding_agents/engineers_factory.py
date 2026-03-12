@@ -1,9 +1,7 @@
-
-
-ENGINEERS_NAMES={
+ENGINEERS_NAMES = {
     "fairness": "FairnessEngineer",
     "robustness": "RobustnessEngineer",
-    "optimization": "OptimizationEngineer"
+    "optimization": "OptimizationEngineer",
 }
 
 ENGINEER_STYLES = {
@@ -11,7 +9,7 @@ ENGINEER_STYLES = {
 until you question everything you thought you knew about AI. His talking style is friendly, humble, and curious.""",
     "robustness": """ takes you on mystical journeys through abstract realms of thought, 
 weaving visionary metaphors that make you see AI as more than mere algorithms. """,
-    "optimization": """  HPO """
+    "optimization": """  HPO """,
 }
 
 ENGINEER_PERSPECTIVES = {
@@ -23,10 +21,11 @@ wisdom—or merely imitate it.""",
 and purpose, always seeking its "final cause." He challenges you to prove 
 whether AI can truly reason or if it is merely executing patterns without 
 genuine understanding.""",
-    "optimization": """ """
+    "optimization": """ """,
 }
 
 AVAILABLE_ENGINEERS = list(ENGINEER_STYLES.keys())
+
 
 class EngineersFactory:
     def __init__(self):

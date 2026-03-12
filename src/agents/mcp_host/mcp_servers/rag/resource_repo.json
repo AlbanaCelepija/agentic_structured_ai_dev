@@ -1,0 +1,14 @@
+[
+    {
+        "id": "evidently",
+        "urls": [
+            "https://github.com/evidentlyai/evidently"
+        ]
+    },
+    {
+        "id": "holisticai",
+        "urls": [
+            "https://github.com/holistic-ai/holisticai"
+        ]
+    }
+]

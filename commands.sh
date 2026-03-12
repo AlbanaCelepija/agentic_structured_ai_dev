@@ -12,6 +12,10 @@ ollama run mistral:7b
 ollama create finetunedmodel -f modelfile
 ####### list 
 ollama list
+####### list running models
+ollama ps
+####### stop model
+ollama stop llama3.2:1b
 ####### create model
 ollama create unsloth_ft_model -f model/Modelfile
 
@@ -29,8 +33,20 @@ curl http://localhost:11434/api/generate -d '{
 git clone https://github.com/comet-ml/opik.git
 # Navigate to the opik folder 
 cd opik 
-# Start the Opik platform
+# Start the Opik platform 
 ./opik.sh
+#http://localhost:5173
+# Stop the Opik platform
+./opik.sh --stop
+
 
 # MCP server setup instructions
 npx @modelcontextprotocol/inspector uv run mcp_server.py  # src/agents/coding_agents/fairness_agent
+
+# PGVector setup instructions
+
+# langgraph studio
+uv run langgraph dev 
+
+# inside rag_assistant/start_simple_evolve/mcp_host/mcp_servers
+python create_fairness_doc_longterm_memory.py
