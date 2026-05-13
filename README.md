@@ -8,8 +8,8 @@ The project  contributes to the development phase of an AI product and act as an
 
 ## Key Capabilities
 
-- **High-Quality Content Retrieval**: Search and retrieve relevant content from open-source toolkit official documentation
-- **Code Sample Discovery**: Find  toolkit code snippets and examples .
+- **Content Retrieval**: Search and retrieve relevant content from open-source toolkit official documentation
+- **Code Sample Discovery**: Find toolkit code snippets and examples .
 - **Real-time Updates**: Access the latest documentation as it's published.
 
 ## Supported Tools
