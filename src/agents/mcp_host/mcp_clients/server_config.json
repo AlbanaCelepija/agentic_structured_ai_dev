@@ -16,6 +16,13 @@
         "fetch": {
             "command": "uvx",
             "args": ["mcp-server-fetch"]
+        },
+        "fairness_codebase": {
+            "command": "python",
+            "args": ["../mcp_servers/mcp_server_fairness_codebase.py"],
+            "env": {
+                "POSTGRES_URL": "postgresql+psycopg://postgres:postgres@localhost:5432/fairness_tools"
+            }
         }
     }
 }
